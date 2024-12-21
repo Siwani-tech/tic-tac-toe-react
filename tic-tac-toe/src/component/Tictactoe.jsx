@@ -7,25 +7,44 @@ function TicTacToe() {
   const [currentPlayerState, setCurrentPlayerState] = useState("X");
   const [message, setMessage] = useState("");
 
-  const handleCellClick = (i) => {
-    if (gameBoard[i] === "" && !isGameOver(gameBoard)) {
-      const updatedBoard = [...gameBoard]; 
-      const moveValid = makeMove(i, currentPlayerState, updatedBoard);
+  
 
+  const handleCellClick = (i) => {
+    if (gameBoard[i] === "" && message === "") {
+      const updatedBoard = [...gameBoard];
+      const moveValid = makeMove(i, currentPlayerState, updatedBoard);
+  
       if (moveValid) {
-        setGameBoard(updatedBoard); 
-        if (isGameOver(updatedBoard)) {
-         
-          if (hasPlayerWon(currentPlayerState, updatedBoard)) {
-            setMessage(`Player ${currentPlayerState} wins!`);
-          } else {
-            setMessage("Game over! It's a tie.");
-          }
+        setGameBoard(updatedBoard);
+  
+        const playerWon = hasPlayerWon(currentPlayerState, updatedBoard);
+        const gameOver = isGameOver(updatedBoard);
+  
+        if (playerWon) {
+          setMessage(`Player ${currentPlayerState} wins!`);
+          setTimeout(() => {
+            alert(`Player ${currentPlayerState} wins!`);
+            resetGame();
+          }, 100);
+        } else if (gameOver) { 
+          setMessage("Game over! It's a tie.");
+          setTimeout(() => {
+            alert("Game over! It's a tie.");
+            resetGame();
+          }, 100);
         } else {
-          setCurrentPlayerState(switchPlayer(currentPlayerState)); 
+          setCurrentPlayerState(switchPlayer(currentPlayerState));
         }
       }
     }
+  };
+  
+  
+
+  const resetGame = () => {
+    setGameBoard(Array(9).fill(""));
+    setCurrentPlayerState("X");
+    setMessage("");
   };
 
   return (
