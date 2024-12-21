@@ -1,4 +1,4 @@
-# [tic-tac-toe-react](https://tic-tac-toe-react-lgkl-pky9cbrs4-siwanitechs-projects.vercel.app/)
+# [tic-tac-toe-react](https://tic-tac-toe-react-h2xw.vercel.app/)
 
 
 # 🎮 Tic-Tac-Toe
@@ -9,7 +9,7 @@ A simple and interactive **Tic-Tac-Toe** game built using **React.js**. This pro
 
 ## 🚀 Live Demo
 
-🌐 [Play Tic-Tac-Toe Now](https://tic-tac-toe-react-lgkl-pky9cbrs4-siwanitechs-projects.vercel.app/)  
+🌐 [Play Tic-Tac-Toe Now](https://tic-tac-toe-react-h2xw.vercel.app/)  
 
 
 ---
